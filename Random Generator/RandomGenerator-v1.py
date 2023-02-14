@@ -2,14 +2,12 @@ import random
 
 # import modules for AlphaNumberList class.
 
-result=[]
-
 def GenerateARandomNumber(minValue:int,maxValue:int): # Inclusive minValue , Exclusive maxValue
     rdf=random.random()
     return int(rdf*(maxValue-minValue)+minValue)
 def GenerateARandomLetter(): 
-    rdn=GenerateARandomNumber(minValue=0, maxValue=len(AlphaNumberList.GetList()))
-    return AlphaNumberList.GetList()[rdn]
+    rdn=GenerateARandomNumber(minValue=0, maxValue=len(junk2.AlphaNumberList.GetList()))
+    return junk2.AlphaNumberList.GetList()[rdn]
 def GenerateRandomList(minElem:int,maxElem:int)->list:
     numOfElem=GenerateARandomNumber(minElem,maxElem)
     li=[ GenerateARandomLetter() for k in range(0,numOfElem,1)]
@@ -35,7 +33,6 @@ func_list=[GenerateRandomList,GenerateRandomTuple,GenerateRandomDict]
 wrapper_list=[list,tuple,dict]
 
 def GenerateRandomNestedData(minElem:int,maxElem:int,level:int):
-    global result
     if level == 1:
         rdn = GenerateARandomNumber(0,len(func_list)-1+1)
         randomFunc=func_list[rdn]
