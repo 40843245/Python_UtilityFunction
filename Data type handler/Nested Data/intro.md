@@ -50,5 +50,11 @@ In the method GetNestedDatas(self,data) of the class Data,
     
     
 ### Example 
-o={'1':'a','2':'b',['3','4',{'5':'f'}]}
+Example 1
+    
+        o={'1':'a','2':'b','3':['4','5',{'6':'f'}]}
+    
+  The expected output of GetNestedDatas(data=o) should be
+  
+    ['1', 'a', '2', 'b', '3', ['4', '5', {'6': 'f'}]]
     
