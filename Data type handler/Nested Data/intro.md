@@ -52,9 +52,39 @@ In the method GetNestedDatas(self,data) of the class Data,
 ### Example 
 Example 1
     
-        o={'1':'a','2':'b','3':['4','5',{'6':'f'}]}
+     o={'1':'a','2':'b','3':['4','5',{'6':'f'}]}
     
   The expected output of GetNestedDatas(data=o) should be
   
     ['1', 'a', '2', 'b', '3', ['4', '5', {'6': 'f'}]]
+    
+   The expected output of GetValueByKeyInNestedDatas(data=o,key='3',containValue=False) should be
+    
+    ['4', '5', {'6': 'f'}]
+    
+   The expected output of GetValueByKeyInNestedDatas(data=o,key='3',containValue=True) should be
+   
+    ['4', '5', {'6': 'f'}]
+     
+   The expected output of GetValueByKeyInNestedDatas(data=o,key='6',containValue=True) should be
+      
+    f
+      
+   The expected output of GetValueByKeyInNestedDatas(data=o,key='7',containValue=False) should be
+       
+    -1
+     
+  The expected output of GetValueByKeyInNestedDatas(data=o,key='f',containValue=False) should be
+  
+    -1
+    
+  The expected output of GetValueByKeyInNestedDatas(data=o,key='f',containValue=True) should be
+  
+    f
+    
+  The expected output of GetValueByKeyInNestedDatas(data=o,key='3',containValue=False) should be
+          
+    
+    
+    
     
