@@ -94,9 +94,9 @@ In this example, I will use example in practice.
 
 I will use the variable initial_data which stores the initial data of the YT channel.
 
-The part of code
+The part of code.
 
-print(self.initial_data)
+        print(self.initial_data)
         
         for i in range(0,10,1):
             print("---------------------------------------")
@@ -108,7 +108,12 @@ print(self.initial_data)
         result=self.GetValueByKeyInNestedDatas(self.initial_data,val,containValue=False)
         print(result)
 
-The result from the part of code
+
+All code is available at GitHub. Link:
+
+https://github.com/40843245/MyDevelopment_Python/blob/main/Application/YT/YT%20Link/YT%20Link%20Opener/YTLinkOpener-GUI-v1/YTLinkOpener-GUI-v1.py
+
+The result from the part of code looks like this.
 
     {'responseContext': {'serviceTrackingParams': [{'service': 'GFEEDBACK', 'params': [{'key': 'route', 'value': 'channel.videos'}, {'key': 'is_casual', 'value': 'false'}, 
     
