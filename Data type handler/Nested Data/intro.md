@@ -1,6 +1,9 @@
 # Intro to utility class
 ## In FindValuesWithKeyInNestedDict.py
+
+### Intro to its method
 Given a nested data (for any common type (such as tuple,list,dict)), one can 
+
 1. search specific data in nested data (i.e. one or more values contains either list,tuple,set,dict) Such as o={'1':'a','2':'b',['3','4',{'5':'f'}]}
 
 In the method GetValueByKeyInNestedDatas(self,data,key,containValue:bool) of the class Data,
@@ -44,4 +47,8 @@ In the method GetNestedDatas(self,data) of the class Data,
     This method will perform GetNestedData(self,data) then return self.result.
     
     1) data : The origin data that we will search for. 
+    
+    
+### Example 
+o={'1':'a','2':'b',['3','4',{'5':'f'}]}
     
