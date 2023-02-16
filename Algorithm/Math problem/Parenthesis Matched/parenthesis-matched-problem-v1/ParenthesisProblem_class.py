@@ -2,7 +2,7 @@ class ParenthesisProblem():
     def sort_key1(self,val):
         return val[0]
             
-    def IsBetweenLine(li:list)->bool:
+    def IsBetweenLine(self,li:list)->bool:
         for idx in range(0,len(li),1):
             li_idx=li[idx]
             for jdx in range(idx+1,len(li),1):
