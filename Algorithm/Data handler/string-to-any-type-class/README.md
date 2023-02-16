@@ -10,3 +10,12 @@ Strips the extra tab,newline,whitespace,single quote, double quote, parenthesis,
 
 However, my code is NOT completed.
 I will complete the code so that it can achieve my goal as soon as possible.
+
+
+## NOTICE
+
+It is important.
+
+    DON't
+          
+I will only
