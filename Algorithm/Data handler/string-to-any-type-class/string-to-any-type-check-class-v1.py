@@ -12,6 +12,8 @@
 # However, my code is NOT completed.
 # I will complete the code so that it can achieve my goal as soon as possible.
 
+# For more details, see README.md
+
 from operator import itemgetter
 
 from Letter_ENUM_class import Letter_ENUM
