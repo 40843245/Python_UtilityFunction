@@ -14,8 +14,16 @@ I will complete the code so that it can achieve my goal as soon as possible.
 
 ## NOTICE
 
-It is important.
+1. It is important.
 
-    DON't
+    DON'T too rely the result from this code. Check the result once after one runs the code.
           
-I will only
+Although it took me more than one day to development and test these data then debug it (The data shows the comment after the main block 
+
+for those data, see the topmost comment at this file) and, I will only test these data.
+
+Therefore, I may miss some uncommon case. (I believe there is a little probability to get unexpected result in some uncommon case.)
+
+2. In this code, one just can
+
+    Check the string is valid such that it can be converted into these types (int,string,set,tuple,list).
