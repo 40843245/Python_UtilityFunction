@@ -11,12 +11,11 @@ Strips the extra tab,newline,whitespace,single quote, double quote, parenthesis,
 However, my code is NOT completed.
 I will complete the code so that it can achieve my goal as soon as possible.
 
-
-## NOTICE
+### NOTICE
 
 1. It is important.
 
-    DON'T too rely the result from this code. Check the result once after one runs the code.
+         DON'T too rely the result from this code. Check the result once after one runs the code.
           
 Although it took me more than one day to development and test these data then debug it (The data shows the comment after the main block 
 
@@ -24,6 +23,25 @@ for those data, see the topmost comment at this file) and, I will only test thes
 
 Therefore, I may miss some uncommon case. (I believe there is a little probability to get unexpected result in some uncommon case.)
 
-2. In this code, one just can
+2. It is also important. In this code, one just can
 
-    Check the string is valid such that it can be converted into these types (int,string,set,tuple,list).
+         1) Check the string is valid such that it can be converted into these types (int,string,set,tuple,list) withouut exception.
+         P.S. It is very tough to me.
+         
+One can NOT
+
+           1) Check the string can be converted into dict.
+           Since I don't complete this part. It is the toughest part for me.
+           
+           2) Attempt to convert the string into other type.
+         
+3. Check these things.
+
+            1) update and import the latest version of the module I used in the code.
+
+
+### My goal
+I hope I can complete these things in future version.
+    
+            1) Check the string can be converted to dict.
+            2) Convert the string into these types.
