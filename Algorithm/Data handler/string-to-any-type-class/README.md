@@ -1,5 +1,5 @@
 # README
-## To the file name 
+## To the file name (string-to-any-type-check-class-v1.py)
 string-to-any-type-class.py
 
 test data for input and status of output shown in the following block.
