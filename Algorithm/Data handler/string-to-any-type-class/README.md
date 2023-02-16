@@ -12,8 +12,25 @@ However, my code is NOT completed.
 I will complete the code so that it can achieve my goal as soon as possible.
 
 ### NOTICE
+1. The introduction of the code.
+         
+          Iff there are NO exceptions after running this file, it refers that in this file, the string is valid 
+          
+          such that it can be converted into these types (int,string,set,tuple,list).
 
-1. It is important.
+2. About the output in the console.
+
+          If you don't want to see the annoying output for you, you can comment out the statements which print the results.
+          
+          For convenience to develop and debug for me, I print the results.
+
+3. It is very,very IMPORTANT!!!
+
+IMPORTANT!!!
+
+IMPORTANT!!!
+
+IMPORTANT!!!
 
          DON'T too rely the result from this code. Check the result once after one runs the code.
           
@@ -23,9 +40,10 @@ for those data, see the topmost comment at this file) and, I will only test thes
 
 Therefore, I may miss some uncommon case. (I believe there is a little probability to get unexpected result in some uncommon case.)
 
-2. It is also important. In this code, one just can
+4. It is also important. In this code, one just can
 
          1) Check the string is valid such that it can be converted into these types (int,string,set,tuple,list) withouut exception.
+         
          P.S. It is very tough to me.
          
 One can NOT
@@ -35,9 +53,11 @@ One can NOT
            
            2) Attempt to convert the string into other type.
          
-3. Check these things.
+5. Check these things.
 
             1) update and import the latest version of the module I used in the code.
+            
+ 
 
 
 ### My goal
