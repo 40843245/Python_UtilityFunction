@@ -6,7 +6,7 @@ def GenerateARandomNumber(minValue:int,maxValue:int): # Inclusive minValue , Exc
     rdf=random.random()
     return int(rdf*(maxValue-minValue)+minValue)
 def GenerateARandomLetter(): 
-    rdn=GenerateARandomNumber(minValue=0, maxValue=len(junk2.AlphaNumberList.GetList()))
+    rdn=GenerateARandomNumber(minValue=0, maxValue=len(AlphaNumberList.GetList()))
     return junk2.AlphaNumberList.GetList()[rdn]
 def GenerateRandomList(minElem:int,maxElem:int)->list:
     numOfElem=GenerateARandomNumber(minElem,maxElem)
