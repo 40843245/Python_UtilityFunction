@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import os
 import stat
 import shutil
@@ -67,6 +69,10 @@ class FileOperator(DirectoryOperation):
         if len(o)!=len_should_be:
             raise ValueError("ERROR!!! The length of o should be the number len_should_be.")
         
+    def Copy(self):
+        shutil.copy(self.src_file.filepathname
+                    ,self.dest_file.filepathname
+                    )
         
     def CopyFile(self,*argv,follow_symlinks:bool):
         shutil.copyfile(self.src_file.filepathname
@@ -89,6 +95,22 @@ class FileOperator(DirectoryOperation):
                            ,"traceback (from last call): MoveFile"
                            ,"[WinError 183] Cannot create a file or directory that already exists.")
     
+    def RemoveSrcFile(self):
+        os.remove(self.src_file.filepathname)
+        
+    def ClearAllFilesInSameDirectoryOfSrcFile(self):
+        if os.path.isfile(self.src_file.filepathname):
+            dirName=os.path.dirname(self.src_file.filepathname)
+        elif os.path.isdir(self.src_file.filepathname):
+            dirName=self.src_file.filepathname
+        else:
+            raise ValueError
+        files=os.listdir(dirName)
+        for file in files:
+            file=os.path.join(dirName,file)
+            os.remove(file)
+            
+        
     def RemoveReadonly(self,func, path, _):
         """Clear the readonly bit and reattempt the removal"""
         os.chmod(path, stat.S_IWRITE)
@@ -99,6 +121,9 @@ class FileOperator(DirectoryOperation):
         archive_name = os.path.expanduser(os.path.join('~', 'myarchive'))
         root_dir = os.path.expanduser(os.path.join('~', '.ssh'))
         shutil.make_archive(archive_name, 'gztar', root_dir)
+        
+   
+        
 def test():
     src_filepathname=r"C:\Users\user\Desktop\t.txt"
     dest_filepathname=r"C:\Users\user\Desktop\t2.txt"
