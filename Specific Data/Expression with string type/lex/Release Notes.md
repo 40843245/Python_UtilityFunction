@@ -1,7 +1,9 @@
 # Release Notes
 ## In version 1
 ### Release Date:
-2022/02/24 10:03 a.m.
+2022/02/24 10:03 a.m. Finish my project
+
+2022/02/24 11:15 a.m. Finish my Release Notes.md
 ### Bugs
 There are NO bugs.
 ### Function:
