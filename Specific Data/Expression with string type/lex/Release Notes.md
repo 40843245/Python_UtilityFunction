@@ -48,7 +48,7 @@ Else, print that it is illegal character then skip the token.
 
 2. Assigning a string and make it either a variable or a function.
  
-To do this, I use vars()[ <string_name> ]= <variable> 
+To do this, I use vars()[ <string_name> ] = <variable> 
 ### Advantage to the first code of the following website in Ref section.
 
 # Ref
