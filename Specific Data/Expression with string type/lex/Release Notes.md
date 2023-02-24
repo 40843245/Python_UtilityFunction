@@ -52,6 +52,8 @@ To do this, I use
 
         vars()[ <string_name> ] = <variable> 
         
+And I define a variable whose name is <string_name>
+        
 ### Advantage to the first code of the following website in Ref section.
 
 # Ref
