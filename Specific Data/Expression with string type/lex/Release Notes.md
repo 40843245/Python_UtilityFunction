@@ -50,13 +50,24 @@ Else, print that it is illegal character then skip the token.
  
 To do this, I use 
 
-        vars()[ <string_name> ] = <variable> 
+        vars()[ <string_name> ] = <value>
         
-And I define a variable whose name is <string_name>
+And I define a variable whose name is <string_name> and its value is <value>
         
-### Advantage to the first code of the following website in Ref section.
+Similarly for defining a function with the name with string type.
+        
+For more details, visit the following second website in Ref section.
+        
+### Advantage to the first code of the following first website in Ref section.
+     
+        
+       1) Flexible
 
 # Ref
-MORE details and knowledge of lex, visit the following websites.
+1. MORE details and knowledge of lex, visit the following websites.
 
-https://www.dabeaz.com/ply/ply.html#ply_nn0
+        https://www.dabeaz.com/ply/ply.html#ply_nn0
+        
+ 2. Way to define either a variable or a function with the name with string type.
+        
+        https://www.geeksforgeeks.org/python-program-to-create-dynamically-named-variables-from-user-input/
