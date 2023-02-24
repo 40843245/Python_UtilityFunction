@@ -73,7 +73,7 @@ For more details, visit the following second website in Ref section.
         For more details, see the code or see the following section -- details to this code.
         
 ### Details to this code
-The constructor of the LEX class only accepts these paramters.
+The constructor of the LEX class is defined as follows.
         
      def __init__(self
     ,tokens:tuple
@@ -81,8 +81,8 @@ The constructor of the LEX class only accepts these paramters.
     ,validToken:dict
     ,func_dict:dict
     ):
-        
-        where
+       
+where
         
 
 # Ref
