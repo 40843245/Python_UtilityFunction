@@ -60,8 +60,30 @@ For more details, visit the following second website in Ref section.
         
 ### Advantage to the first code of the following first website in Ref section.
      
+       1) Flexible:
+       
+       It is more flexible to define valid tokens and functions.
         
-       1) Flexible
+       One don't have to chnage the code of LEX class to perform different things.
+        
+       One just has to define the function, adding it into the list, adding the name to the tuple
+        
+       then pass the list and the tuple as parameters of the constructor of the LEX class.
+        
+        For more details, see the code or see the following section -- details to this code.
+        
+### Details to this code
+The constructor of the LEX class only accepts these paramters.
+        
+     def __init__(self
+    ,tokens:tuple
+    ,data:str
+    ,validToken:dict
+    ,func_dict:dict
+    ):
+        
+        where
+        
 
 # Ref
 1. MORE details and knowledge of lex, visit the following websites.
