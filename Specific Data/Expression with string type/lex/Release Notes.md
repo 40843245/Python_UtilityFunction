@@ -8,7 +8,7 @@ There are NO bugs.
 One can use lex to split the expression with string type into tokens and handle it.
 
 ### intro to this code
-In example of this code, it simply check each tokens is one of +,-,*, /, a number.
+1. In example of this code, it simply check each tokens is one of +,-,*, /, a number.
 
 If the token is one of +,-,*,/ , just print it.
 
@@ -46,6 +46,12 @@ Else, print that it is illegal character then skip the token.
 
 (P.S. one token represents one letter)
 
+2. Assigning a string and make it either a variable or a function.
+ 
+To do this, I use vars()[<string_name>]=<variable>
+### Advantage to the first code of the following website in Ref section.
+
+# Ref
 MORE details and knowledge of lex, visit the following websites.
 
 https://www.dabeaz.com/ply/ply.html#ply_nn0
