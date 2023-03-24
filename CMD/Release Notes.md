@@ -31,3 +31,20 @@ When I want to extend, I have to start to write my new function ( and I will wri
 When I want to maintain, I have to modify it two times instead of once.
 
 It is the reason why I write a method named Transfrom_AtMultiLine which required a function as its parameter.
+
+## In version 2
+### Release Date:
+2023/03/24 21:32 p.m.
+
+### Added
+Added a new .zip file named "DOScmd_taskmgr.zip" which contains two python files.
+
+1) taskmgr_class.py
+2) DOScmd_Runner_class.py (main file)
+
+Installing and unzip the file then execute DOScmd_Runner_class.py with Python. 
+
+Then you will see the task manager is opened.
+
+
+
