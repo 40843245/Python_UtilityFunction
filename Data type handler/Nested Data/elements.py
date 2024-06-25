@@ -1,9 +1,20 @@
 from found_macro import FoundMacro
 
-import copy
-
 class Elements():
-
+    """
+	Description:
+    	Utility method that check the object `src` with type `object_type` is None or empty.
+	Paramater:
+   		src:source object.
+        object_type:must be a data type.
+    Returned Value:
+		Return True iff `src` is None or empty for type `object_type`. Otherwise, return False.
+    Example:
+    	Example1:
+			x = dict()
+			result = Elements.is_empty_object(src=x,object_type=dict)
+			print(result) # True
+    """
     @staticmethod
     def is_empty_object(src,object_type):
         if src is None:
@@ -12,7 +23,17 @@ class Elements():
             if src == object_type() or src is object_type():
                 return True    
         return False
-        
+
+    """
+	Description:
+    	check an object `src` is None or empty of one of these type:str,dict,list,tuple.
+	Paramater:
+   		src: source object
+    Returned Value:
+		Return True iff `src` is None or empty of one of these type:str,dict,list,tuple (i.e. Returns True iff src == '', or src == or is one of these objects {},[],() respectively).  Otherwise, return False.
+	NOTICE: 
+    	1. It will invoke Elements.is_empty_object.
+    """ 
     @staticmethod
     def is_empty(src) -> bool:
         if src is None:
@@ -27,6 +48,17 @@ class Elements():
             return True
         return False
 
+    """
+	Description:
+    	A recursive method that check the object `src` contains the elem `dest`.
+	Paramater:
+   		src: source object. It can be Any. However, the elem will be checked iff it is one of these types: list,tuple,dict.
+        dest: value that we want to find.
+    Returned Value:
+		Return True iff `src` == `dest` or `src` contains `dest`.  Otherwise, return False.
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
+    """ 
     @staticmethod
     def contains(src,dest) -> bool:
         if dest == src :
@@ -44,7 +76,18 @@ class Elements():
             if isinstance(elem , (list,tuple)) == True:
                 return Elements.contains(src = elem,dest = dest)
         return False
-    
+
+    """
+	Description:
+    	A recursive method that check the object `src` has the key `dest`.
+	Paramater:
+   		src: source object. It can be Any. However, the value of item will be checked iff it is one of these types: list,tuple,dict.
+        dest: key that we want to find.
+    Returned Value:
+		Return True iff  `src` has the key `dest`.  Otherwise, return False.
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
+    """     
     @staticmethod
     def contains_key(src,dest) -> bool:
         if dest == src :
@@ -63,6 +106,18 @@ class Elements():
                         return True
         return False
     
+    """
+	Description:
+    	A recursive method that get the first corresponding value of key `dest` in the object `src`.
+	Paramater:
+   		src: source object. It can be Any. However, the value of item will be checked iff it is one of these types: list,tuple,dict.
+        dest: key as target.
+    Returned Value:
+		Return the corresponding value of key `dest` iff `src` has the key `dest`. Otherwise, return the macro FOUNDMARCO.NOTFOUND.
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
+        2. FOUNDMACRO which defined in found_macro file must be imported.
+    """   
     @staticmethod
     def get_value_by_key(src,dest):
         if isinstance(src,(dict)) == True:
@@ -80,6 +135,19 @@ class Elements():
                     return result
         return FoundMacro.NOTFOUND
     
+    """
+	Description:
+    	A recursive method that get all corresponding value of key `dest` in the object `src`.
+	Paramater:
+   		src: source object. It can be Any. However, the value of item will be checked iff it is one of these types: list,tuple,dict.
+        top_dest: a key that should be on top level of `inner_dests`.
+        inner_dests: keys as target.
+    Returned Value:
+		Return the corresponding value of key `inner_dests` iff `src` has the key `dest`. Otherwise, return an empty [[]].
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
+        2. FOUNDMACRO which defined in found_macro file must be imported.
+    """
     @staticmethod
     def get_all_values_by_key(src,top_dest,inner_dests : list ):
         results_2D = list()
@@ -92,6 +160,19 @@ class Elements():
             results_2D.append(results_1D)
         return results_2D
     
+    """
+	Description:
+    	A recursive method that get all corresponding value of key `dest` in the object `src`.
+	Paramater:
+   		src: source object. It can be Any. However, the value of item will be checked iff it is one of these types: list,tuple,dict.
+        top_dest: a key that should be on top level of `inner_dests`.
+        inner_dests: keys as target.
+    Returned Value:
+		Return the corresponding value of key `inner_dests` iff `src` has the key `dest`. Otherwise, return an empty [[]].
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
+        2. FOUNDMACRO which defined in found_macro file must be imported.
+    """
     @staticmethod
     def get_value_by_dict(src,mapping:dict)->dict:
         mapping_items = list(mapping.items())
@@ -141,6 +222,17 @@ class Elements():
                     return ( 0 , key_jth , result[2] , mapping_top_level_key, mapping_top_level_value)
         return ( FoundMacro.NOTFOUND,FoundMacro.NOTFOUND,FoundMacro.NOTFOUND,FoundMacro.NOTFOUND,FoundMacro.NOTFOUND)
     
+    """
+	Description:
+    	A recursive method that delete specified item `mapping` in the object `src`.
+	Paramater:
+   		src: source object. It can be Any. However, the value of item will be checked iff it is one of these types: list,tuple,dict.
+        mapping: a dict
+    Returned Value:
+		Returns the result after deleting the specified item. 
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
+    """
     @staticmethod
     def delete_specified_item(src,mapping):
         if isinstance(src,(dict)) == True:
@@ -170,67 +262,18 @@ class Elements():
                 result_1D.append(find_result[proj])
             results_2D.append(result_1D)
         return results_2D
+    
     """
-    @staticmethod
-    def delete_specified_record(src,mapping):
-        # 1th case: trivial case.
-        # src is a dict with value is just an object with simple type (i.e. not a list | tuple | dict | Array etc)
-        if isinstance(src,(dict)) == True:
-            if src == mapping:
-                return None
-            
-        # 2th case 
-        # src is a dict with value is an object with complex type.
-        if isinstance(src,(dict)) == True:
-            Elements.static_need_to_add_flag = True
-            Elements.static_temp_result = dict()
-            for elem_key,elem_value in src.items():
-                if isinstance(elem_value,(dict)) == True:
-                    Elements.static_in_which_type = str(type(elem_value))
-                    Elements.static_temp_key = elem_key
-                    Elements.delete_specified_record(src=elem_value,mapping=mapping)
-                elif isinstance(elem_value,(list,tuple)) == True:
-                    Elements.static_in_which_type = str(type(elem_value))
-                    Elements.static_temp_key = elem_key
-                    Elements.delete_specified_record(src=elem_value,mapping=mapping)
-                elif ( elem_key in list(mapping.keys()) and elem_value in list(mapping.values()) ):
-                    Elements.static_in_which_type = str(type(elem_value))
-                    Elements.static_temp_key = copy.deepcopy(elem_key)
-                    Elements.static_need_to_add_flag = False
-                    break
-                else:
-                    if Elements.static_in_which_type != str(type(dict())):
-                        Elements.static_result[elem_key] = copy.deepcopy(elem_value)
-                    else:
-                        Elements.static_temp_result[elem_key] = copy.deepcopy(elem_value)
-                        if Elements.static_temp_key != '':
-                            Elements.static_result[Elements.static_temp_key] = Elements.static_temp_result
-                # we dig in on their values. 
-                if isinstance(elem_value,(list,tuple,dict)) == True:
-                    Elements.delete_specified_record(src=elem_value,mapping=mapping)
-            if Elements.static_need_to_add_flag == True:
-                if Elements.static_temp_key != '':
-                    Elements.static_result[Elements.static_temp_key]= copy.deepcopy(Elements.static_temp_result)
-                Elements.static_temp_result = dict()
-                Elements.static_need_to_add_flag = False
-                Elements.static_temp_key = ''
-                
-        # 3th case 
-        # src is a list | tuple so that we need to iterate it for all elements in src.
-        elif isinstance(src,(list|tuple)) == True:
-            Elements.static_result_list = list()
-            for elem in src:
-                Elements.static_in_which_type = str(type(elem))
-                Elements.delete_specified_record(src=elem,mapping=mapping)
-                if Elements.static_result != dict():
-                    Elements.static_result_list.append(copy.deepcopy(Elements.static_result))
-                    Elements.sub_init()
-            
-        # 4th case 
-        # src is neither a list, tuple, nor dict. 
-        # Do nothing.
+	Description:
+    	A recursive method that delete specified record `mapping` in the object `src`.
+	Paramater:
+   		src: source object. It can be Any. However, the value of item will be checked iff it is one of these types: list,tuple,dict.
+        mapping: a dict
+    Returned Value:
+		Returns the result after deleting the specified record. 
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
     """
-
     @staticmethod
     def delete_specified_record(src:list|tuple|dict,mapping:dict,depth: int = 0 ,running_flag : bool= True):
         if isinstance(depth,(int)) != True:
@@ -271,8 +314,19 @@ class Elements():
             return temp_result_list
 
 
+    """
+	Description:
+    	A recursive method that update its value whose item satisfies a dict `filter` to json_data` in the object `src`.
+	Paramater:
+   		src: source object. It can be Any. However, the value of item will be checked iff it is one of these types: list,tuple,dict.
+        filter: a dict as filter
+        json_data: a dict that will be updated to if needed.
         
-
+    Returned Value:
+		Returns the result after deleting the specified record. 
+	NOTICE: 
+    	1. It may invoke the method itself. Thus, it may spend some time if the given `src` is too complicated.
+    """ 
     @staticmethod
     def update_value_by_dict(src : list|dict,filter : dict = None,json_data : dict = None):
         if isinstance(src,(list,dict)) == False:
